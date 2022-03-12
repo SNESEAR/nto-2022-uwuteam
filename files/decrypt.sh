@@ -1,0 +1,1 @@
+for file in $(find enc -iname "*.encr"); do out=$(basename $file); out=${out%".encr"}; openssl enc -d -aes-256-cbc -a -salt -in $file -out "dec/$out" -pass pass:B741E584BC -iv 0E7D508F4AF6C3E8B6FCF90933FF38A0; done
